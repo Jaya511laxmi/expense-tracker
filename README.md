@@ -1,229 +1,207 @@
+# EXPENSE TRACKER
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/542d899c-7d2f-41ca-bd06-7841a33b61ec" alt="Expense Tracker Logo" width="150"/>
+  
+  ### *A simple and responsive expense management application* :)
+  
+  [![Java](https://img.shields.io/badge/Java-17+-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.oracle.com/java/)
+  [![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5.4-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)](https://spring.io/projects/spring-boot)
+  [![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+  [![Thymeleaf](https://img.shields.io/badge/Thymeleaf-005F0F?style=for-the-badge&logo=thymeleaf&logoColor=white)](https://www.thymeleaf.org/)
 
-<div align="left">
-        <img alt="freepik-modern-linear-money-care-accounting-logo-20250808042923zscb" src="https://github.com/user-attachments/assets/8f031813-0a46-4c54-ab76-f474bed95bbd" width="40%" align="left" style="margin-right: 15px"/>
-    <div style="display: inline-block;">
-        <h2 style="display: inline-block; vertical-align: middle; margin-top: 0;">EXPENSE-TRACKER</h2>
-        <p>
-	<em><code>❯ # expense-tracker-backend</code></em>
-        <p><!-- default option, no dependency badges. -->
-</p>
-        <p>
-	<!-- default option, no dependency badges. -->
-</p>
-    </div>
 </div>
-<br clear="left"/>
-
-##  Table of Contents
-
-- [ Overview](#-overview)
-- [ Features](#-features)
-- [ Project Structure](#-project-structure)
-  - [ Project Index](#-project-index)
-- [ Getting Started](#-getting-started)
-  - [ Prerequisites](#-prerequisites)
-  - [ Installation](#-installation)
-  - [ Usage](#-usage)
-  - [ Testing](#-testing)
-- [ Project Roadmap](#-project-roadmap)
-- [ Contributing](#-contributing)
-- [ License](#-license)
-- [ Acknowledgments](#-acknowledgments)
 
 ---
 
-##  Overview
+## What Makes This Special?
 
-<code>Expense-Tracker is a lightweight backend service built with Spring Boot for managing personal expenses. It exposes a simple REST API to add, view, edit and delete expense records. The service is designed to be easy to run locally (H2 in-memory DB by default) and to be deployable as a standalone JAR. This repository contains the backend only (model, repository, service, controller and templates for a minimal UI).</code>
+**Expense Tracker** is a simple yet effective expense management application built with Spring Boot and Thymeleaf. It provides a clean web interface for managing your personal expenses with a MySQL database backend for reliable data storage.
 
----
+### Why Choose Our Expense Tracker?
 
-##  Features
-
-<code>Create, read, update and delete expense records (CRUD).
-Simple domain model: Expense with fields such as id, title, amount, date, category, description.
-Service layer with basic validation and repository abstraction (Spring Data JPA).
-H2 in-memory database for quick local development.
-Ready to extend for authentication, reporting, or frontend integration.
-</code>
+- **Web-Based Interface**: Built with Thymeleaf for responsive web pages
+- **Reliable Storage**: MySQL database for persistent data management
+- **Spring Boot Power**: Enterprise-grade framework for stability
+- **Simple & Clean**: Focused on core expense tracking functionality
+- **Easy Deployment**: Standard Spring Boot application structure
 
 ---
 
-##  Project Structure
+## Features
 
-```sh
-└── expense-tracker/
-    ├── README.md
-    ├── mvnw
-    ├── mvnw.cmd
-    ├── pom.xml
-    └── src
-        ├── main
-        └── test
+<table>
+<tr>
+<td width="50%">
+
+### **Core Functionality**
+- **Expense Management** - Add, view, edit, and delete expenses
+- **Web Interface** - Responsive Thymeleaf-based UI
+- **Data Persistence** - MySQL database storage
+- **Expense Details** - Track title, amount, date, category, and description
+
+</td>
+<td width="50%">
+
+### **Technical Stack**
+- **Spring Boot 3.5.4** - Main application framework
+- **Spring Data JPA** - Database operations
+- **Thymeleaf** - Server-side template engine
+- **MySQL** - Production database
+- **Maven** - Dependency management
+
+</td>
+</tr>
+</table>
+
+---
+
+## Architecture Overview
+
+```
+expense-tracker/
+├── src/main/java/com/jayalaxmi/expensetracker/
+│   ├── ExpenseTrackerApplication.java     # Spring Boot entry point
+│   ├── model/
+│   │   └── Expense.java                   # Expense entity
+│   ├── controller/
+│   │   └── ExpenseController.java         # Web controllers
+│   ├── repository/
+│   │   └── ExpenseRepository.java         # Data access layer
+│   └── service/
+│       └── ExpenseService.java            # Business logic
+├── src/main/resources/
+│   └── templates/                         # Thymeleaf templates
+├── src/test/                              # Test classes
+├── pom.xml                                # Maven configuration
+└── README.md                              # Project documentation
 ```
 
-
-###  Project Index
-<details>
-  <summary><b>java</b></summary>
-
-  <details>
-    <summary><b>com.jayalaxmi.expensetracker</b></summary>
-
-  | File | Description |
-  |------|-------------|
-  | [ExpenseTrackerApplication.java](https://github.com/Jaya511laxmi/expense-tracker/blob/master/src/main/java/com/jayalaxmi/expensetracker/ExpenseTrackerApplication.java) | Spring Boot entrypoint |
-
-  <details>
-    <summary><b>model</b></summary>
-
-  | File | Description |
-  |------|-------------|
-  | [Expense.java](https://github.com/Jaya511laxmi/expense-tracker/blob/master/src/main/java/com/jayalaxmi/expensetracker/model/Expense.java) | Expense entity (id, title, amount, date, category, description) |
-
-  </details>
-
-  <details>
-    <summary><b>controller</b></summary>
-
-  | File | Description |
-  |------|-------------|
-  | [ExpenseController.java](https://github.com/Jaya511laxmi/expense-tracker/blob/master/src/main/java/com/jayalaxmi/expensetracker/controller/ExpenseController.java) | REST controllers for expense endpoints |
-
-  </details>
-
-  <details>
-    <summary><b>repository</b></summary>
-
-  | File | Description |
-  |------|-------------|
-  | [ExpenseRepository.java](https://github.com/Jaya511laxmi/expense-tracker/blob/master/src/main/java/com/jayalaxmi/expensetracker/repository/ExpenseRepository.java) | Spring Data JPA repository |
-
-  </details>
-
-  <details>
-    <summary><b>service</b></summary>
-
-  | File | Description |
-  |------|-------------|
-  | [ExpenseService.java](https://github.com/Jaya511laxmi/expense-tracker/blob/master/src/main/java/com/jayalaxmi/expensetracker/service/ExpenseService.java) | Business logic and validations |
-
-  </details>
-
-  </details>
-</details>
-
-<details>
-  <summary><b>test</b></summary>
-
-  <details>
-    <summary><b>java</b></summary>
-
-    <details>
-      <summary><b>com.jayalaxmi.expensetracker</b></summary>
-
-  | File | Description |
-  |------|-------------|
-  | [ExpenseTrackerApplicationTests.java](https://github.com/Jaya511laxmi/expense-tracker/blob/master/src/test/java/com/jayalaxmi/expensetracker/ExpenseTrackerApplicationTests.java) | Basic Spring Boot tests |
-
-    </details>
-  </details>
-</details>
-
-
 ---
-##  Getting Started
 
-###  Prerequisites
+## Quick Start Guide
 
-Before getting started with expense-tracker, ensure your runtime environment meets the following requirements:
+### Prerequisites
 
-- **Programming Language:** Java
+- **Java 17+** - Required for Spring Boot 3.5.4
+- **Maven 3.6+** - For building the project
+- **MySQL 8.0+** - Database server
+- **Your favorite IDE** - IntelliJ IDEA, Eclipse, or VS Code
 
+### Installation & Setup
 
-###  Installation
-
-Install expense-tracker using one of the following methods:
-
-**Build from source:**
-
-1. Clone the expense-tracker repository:
-```sh
-❯ git clone https://github.com/Jaya511laxmi/expense-tracker
+**Step 1: Clone the Repository**
+```bash
+git clone https://github.com/Jaya511laxmi/expense-tracker.git
+cd expense-tracker
 ```
 
-2. Navigate to the project directory:
-```sh
-❯ cd expense-tracker
+**Step 2: Configure Database**
+Create a MySQL database and update `application.properties`:
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/expense_tracker
+spring.datasource.username=your_username
+spring.datasource.password=your_password
+spring.jpa.hibernate.ddl-auto=update
 ```
 
-3. Install the project dependencies:
+**Step 3: Build and Run**
+```bash
+# Build the project
+./mvnw clean install
 
-echo 'INSERT-INSTALL-COMMAND-HERE'
+# Run the application
+./mvnw spring-boot:run
+```
 
+### Access the Application
 
-
-###  Usage
-Run expense-tracker using the following command:
-echo 'INSERT-RUN-COMMAND-HERE'
-
-###  Testing
-Run the test suite using the following command:
-echo 'INSERT-TEST-COMMAND-HERE'
----
-
-##  Contributing
-
-- **💬 [Join the Discussions](https://github.com/Jaya511laxmi/expense-tracker/discussions)**: Share your insights, provide feedback, or ask questions.
-- **🐛 [Report Issues](https://github.com/Jaya511laxmi/expense-tracker/issues)**: Submit bugs found or log feature requests for the `expense-tracker` project.
-- **💡 [Submit Pull Requests](https://github.com/Jaya511laxmi/expense-tracker/blob/main/CONTRIBUTING.md)**: Review open PRs, and submit your own PRs.
-
-<details closed>
-<summary>Contributing Guidelines</summary>
-
-1. **Fork the Repository**: Start by forking the project repository to your github account.
-2. **Clone Locally**: Clone the forked repository to your local machine using a git client.
-   ```sh
-   git clone https://github.com/Jaya511laxmi/expense-tracker
-   ```
-3. **Create a New Branch**: Always work on a new branch, giving it a descriptive name.
-   ```sh
-   git checkout -b new-feature-x
-   ```
-4. **Make Your Changes**: Develop and test your changes locally.
-5. **Commit Your Changes**: Commit with a clear message describing your updates.
-   ```sh
-   git commit -m 'Implemented new feature x.'
-   ```
-6. **Push to github**: Push the changes to your forked repository.
-   ```sh
-   git push origin new-feature-x
-   ```
-7. **Submit a Pull Request**: Create a PR against the original project repository. Clearly describe the changes and their motivations.
-8. **Review**: Once your PR is reviewed and approved, it will be merged into the main branch. Congratulations on your contribution!
-</details>
-
-<details closed>
-<summary>Contributor Graph</summary>
-<br>
-<p align="left">
-   <a href="https://github.com{/Jaya511laxmi/expense-tracker/}graphs/contributors">
-      <img src="https://contrib.rocks/image?repo=Jaya511laxmi/expense-tracker">
-   </a>
-</p>
-</details>
+Your expense tracker will be available at:
+- **Web Interface**: `http://localhost:8080`
+- **Application Health**: Check logs for startup confirmation
 
 ---
 
-##  License
+## Usage
 
-This project is protected under the [SELECT-A-LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
+Once the application is running:
+
+1. **Open your browser** and navigate to `http://localhost:8080`
+2. **Add expenses** using the web form
+3. **View your expenses** in the expense list
+4. **Edit or delete** expenses as needed
+5. **Track your spending** over time
+
+The Thymeleaf interface provides a clean, responsive web experience for managing your expenses.
 
 ---
 
-##  Acknowledgments
+## Testing
 
-- List any resources, contributors, inspiration, etc. here.
+Run the test suite:
+
+```bash
+# Run all tests
+./mvnw test
+
+# Run tests with detailed output
+./mvnw test -X
+
+# Run specific test class
+./mvnw test -Dtest=ExpenseTrackerApplicationTests
+```
 
 ---
+
+## Database Schema
+
+The application uses a simple expense entity with the following structure:
+
+- **ID** - Primary key (auto-generated)
+- **Title** - Expense description
+- **Amount** - Expense amount
+- **Date** - Date of expense
+- **Category** - Expense category
+- **Description** - Additional details
+
+---
+
+## Contributing
+
+We welcome contributions! Here's how you can help:
+
+### How to Contribute
+
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Make** your changes
+4. **Test** thoroughly (`./mvnw test`)
+5. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+6. **Push** to the branch (`git push origin feature/amazing-feature`)
+7. **Open** a Pull Request
+
+### Development Guidelines
+
+- Follow Spring Boot best practices
+- Write tests for new functionality
+- Keep the UI simple and responsive
+- Maintain clean, readable code
+
+---
+
+## Acknowledgments
+
+- **Spring Boot Team** - For the excellent framework
+- **Thymeleaf Team** - For the powerful templating engine
+- **MySQL** - For reliable database management
+- **Maven** - For dependency management
+
+---
+
+<div align="center">
+
+**Built by [Jaya Laxmi](https://github.com/Jaya511laxmi)**
+
+*Simple expense tracking made easy*
+
+</div>
